@@ -97,6 +97,7 @@ void insertTerm(Poly** head, int coeff, int power) {
 			// remove term
             if (prev) prev->next = cur->next;
             else *head = cur->next;
+			cur->next = NULL;
             free(cur);
         }
         return;
@@ -111,6 +112,7 @@ void freePoly(Poly* head) {
     while (head) {
         Poly* t = head;
         head = head->next;
+		t->next = NULL;
         free(t);
     }
 }
