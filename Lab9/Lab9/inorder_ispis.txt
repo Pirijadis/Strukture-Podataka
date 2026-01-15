@@ -1,0 +1,1 @@
+Inorder prije replace:15 61 73 25 69 33 33 39 66 Inorder nakon replace :0 88 0 218 0 381 0 99 0 
