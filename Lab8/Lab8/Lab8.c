@@ -2,18 +2,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Struktura Ëvora binarnog stabla pretraûivanja */
+/* Struktura √®vora binarnog stabla pretra≈æivanja */
 typedef struct CvorStabla {
     int vrijednost;
     struct CvorStabla* lijevoDijete;
     struct CvorStabla* desnoDijete;
 } CvorStabla;
 
-/* Funkcija za stvaranje novog Ëvora */
+/* Funkcija za stvaranje novog √®vora */
 CvorStabla* stvoriNoviCvor(int novaVrijednost) {
     CvorStabla* noviCvor = (CvorStabla*)malloc(sizeof(CvorStabla));
     if (noviCvor == NULL) {
-        printf("Greöka pri alokaciji memorije!\n");
+        printf("Gre≈°ka pri alokaciji memorije!\n");
         return NULL;
     }
     noviCvor->vrijednost = novaVrijednost;
@@ -71,7 +71,7 @@ int postorderIspis(CvorStabla* korijen) {
     return 1;
 }
 
-/* Pronalaûenje najmanje vrijednosti */
+/* Pronala≈æenje najmanje vrijednosti */
 CvorStabla* pronadiNajmanjiCvor(CvorStabla* korijen) {
     while (korijen != NULL && korijen->lijevoDijete != NULL) {
         korijen = korijen->lijevoDijete;
@@ -110,7 +110,7 @@ CvorStabla* obrisiElement(CvorStabla* korijen, int trazenaVrijednost) {
     return korijen;
 }
 
-/* Pretraûivanje elementa */
+/* Pretra≈æivanje elementa */
 int pronadiElement(CvorStabla* korijen, int trazenaVrijednost) {
     if (korijen == NULL) {
         return 0;
@@ -156,7 +156,7 @@ int main() {
     int n = 0;
 
     do {
-        printf("\n--- BINARNO STABLO PRETRAéIVANJA ---\n");
+        printf("\nBINARNO STABLO PRETRA≈ΩIVANJA \n");
         printf("1. Unos novog elementa\n");
         printf("2. Inorder ispis\n");
         printf("3. Preorder ispis\n");
@@ -204,7 +204,7 @@ int main() {
             printf("\n");
             break;
         case 6:
-            printf("Unesite vrijednost za pretraûivanje: ");
+            printf("Unesite vrijednost za pretra≈æivanje: ");
             scanf("%d", &vrijednost);
             if (pronadiElement(korijen, vrijednost)) {
                 printf("Element postoji u stablu.\n");
@@ -229,3 +229,4 @@ int main() {
 
     return 0;
 }
+
