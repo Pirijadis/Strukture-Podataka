@@ -2,14 +2,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Struktura èvora binarnog stabla pretraživanja */
 typedef struct CvorStabla {
     int vrijednost;
     struct CvorStabla* lijevoDijete;
     struct CvorStabla* desnoDijete;
 } CvorStabla;
 
-/* Funkcija za stvaranje novog èvora */
 CvorStabla* stvoriNoviCvor(int novaVrijednost) {
     CvorStabla* noviCvor = (CvorStabla*)malloc(sizeof(CvorStabla));
     if (noviCvor == NULL) {
@@ -22,7 +20,6 @@ CvorStabla* stvoriNoviCvor(int novaVrijednost) {
     return noviCvor;
 }
 
-/* Funkcija za umetanje elementa u stablo */
 CvorStabla* umetniElement(CvorStabla* korijen, int novaVrijednost) {
     if (korijen == NULL) {
         return stvoriNoviCvor(novaVrijednost);
@@ -38,7 +35,6 @@ CvorStabla* umetniElement(CvorStabla* korijen, int novaVrijednost) {
     return korijen;
 }
 
-/* Inorder ispis */
 int inorderIspis(CvorStabla* korijen) {
     if (korijen == NULL) {
         return 0;
@@ -49,7 +45,6 @@ int inorderIspis(CvorStabla* korijen) {
     return 1;
 }
 
-/* Preorder ispis */
 int preorderIspis(CvorStabla* korijen) {
     if (korijen == NULL) {
         return 0;
@@ -60,7 +55,6 @@ int preorderIspis(CvorStabla* korijen) {
     return 1;
 }
 
-/* Postorder ispis */
 int postorderIspis(CvorStabla* korijen) {
     if (korijen == NULL) {
         return 0;
@@ -71,7 +65,6 @@ int postorderIspis(CvorStabla* korijen) {
     return 1;
 }
 
-/* Pronalaženje najmanje vrijednosti */
 CvorStabla* pronadiNajmanjiCvor(CvorStabla* korijen) {
     while (korijen != NULL && korijen->lijevoDijete != NULL) {
         korijen = korijen->lijevoDijete;
@@ -79,7 +72,6 @@ CvorStabla* pronadiNajmanjiCvor(CvorStabla* korijen) {
     return korijen;
 }
 
-/* Brisanje elementa iz stabla */
 CvorStabla* obrisiElement(CvorStabla* korijen, int trazenaVrijednost) {
     if (korijen == NULL) {
         return NULL;
@@ -110,7 +102,6 @@ CvorStabla* obrisiElement(CvorStabla* korijen, int trazenaVrijednost) {
     return korijen;
 }
 
-/* Pretraživanje elementa */
 int pronadiElement(CvorStabla* korijen, int trazenaVrijednost) {
     if (korijen == NULL) {
         return 0;
@@ -124,7 +115,6 @@ int pronadiElement(CvorStabla* korijen, int trazenaVrijednost) {
     return pronadiElement(korijen->desnoDijete, trazenaVrijednost);
 }
 
-/* Level order ispis (koristi jednostavno polje kao red) */
 int levelOrderIspis(CvorStabla* korijen) {
     if (korijen == NULL) {
         return 0;
@@ -229,4 +219,5 @@ int main() {
 
     return 0;
 }
+
 
