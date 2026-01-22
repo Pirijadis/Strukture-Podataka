@@ -7,7 +7,7 @@
 #define MAX 50
 #define VELICINA_TABLICE 11
 
-/* ---------------- STRUKTURE ---------------- */
+//STRUKTURE 
 
 typedef struct grad {
     char naziv[MAX];
@@ -23,7 +23,7 @@ typedef struct drzava {
     struct drzava* sljedeca;
 } Drzava;
 
-/* ---------------- STVARANJE ---------------- */
+//STVARANJE 
 
 Grad* stvori_grad(char* naziv, int broj) {
     Grad* novi = (Grad*)malloc(sizeof(Grad));
@@ -42,7 +42,7 @@ Drzava* stvori_drzavu(char* naziv, char* datoteka) {
     return nova;
 }
 
-/* ---------------- HASH FUNKCIJA ---------------- */
+/* ---------------- HASH FUNKCIJA 
 
 int hash_funkcija(char* naziv) {
     int suma = 0;
@@ -177,3 +177,4 @@ int main() {
 
     return 0;
 }
+
